@@ -51,7 +51,6 @@
     src: url(https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCIPrE.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
-
 body{
     margin: 0px;
     padding: 0px;
@@ -63,7 +62,7 @@ body{
 }
 
 footer{
-    width: 75%;
+    width: calc(100% - 300px);
     order: 2;
 }
 *{
@@ -73,7 +72,7 @@ footer{
 }
 aside{
     order: 1;
-    width: 25%;
+    width: 300px;
     height: 100vh;
     position: sticky;
     top: 0px;
@@ -82,9 +81,24 @@ aside{
 .aside-first-section{
     padding: 15px 20px;
 }
-aside img{
+.avatar-image-remove-icon{
+    display: flex;
+    justify-content: space-between;
+}
+.avatar-image-remove-icon img{
     width: 45%;
     border-radius: 5px;
+}
+.avatar-image-remove-icon .remove-icon{
+    font-size: 64px;
+    padding: 10px 5px;
+    cursor: pointer;
+    display: none;
+    text-decoration: none;
+    color: black;
+}
+.remove-icon:hover{
+    background-color: grey;
 }
 .text-grey{
     color: grey;
@@ -133,9 +147,52 @@ li a{
 }
 main{
     order: 0;
-    width: 75%;
+    width: calc(100% - 300px);
     background-color: var(--skinGrey);
 
+}
+.small-device{
+    display: none;
+}
+.small-device .bar-icon{
+    font-size: 36px;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+.close-side-menu{
+    display: none;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+}
+#bar-icon-visibility:target {
+    display: block; 
+    z-index: 1;
+    position: fixed; 
+    left: 0px;
+    background-color: #ffffff;
+    overflow: auto; 
+    animation: animateLeft .4s;
+
+}
+#bar-icon-visibility:target .aside-first-section  .avatar-image-remove-icon .remove-icon {
+    display: block;
+}
+#bar-icon-visibility:target ~ main .close-side-menu{
+    display: block;
+    position: fixed;
+    width: calc(100% - 300px);
+    z-index: 1;
+    right: 0;
+    background-color: rgba(0,0,0,.5);
+}
+#bar-icon-disable:target aside{
+    display: none;
+}
+
+.small-device img{
+    width: 65px;
+    border-radius: 50%;
 }
 .top-header{
     padding: 15px 20px;
@@ -143,7 +200,7 @@ main{
 .top-header h1{
    font-weight: 900;
     font-size: 2em;
-   margin-top: 0px;
+   /* margin-top: 0px; */
 }
 .filter{
     display: flex;
@@ -232,10 +289,15 @@ main{
     display: flex;
     gap: 15px;
 }
-.about-me img{
+.picture div{
     width: 50%;
     height: 400px;
 }
+.picture div img{
+    width: 100%;
+    height: 100%;
+}
+
 .about-me h3{
     padding: 10px;
 }

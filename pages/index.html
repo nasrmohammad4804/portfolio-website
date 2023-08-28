@@ -7,14 +7,20 @@
   <title>My Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../styles/style.css">
-</head>
+  <link rel="stylesheet" href="../styles/animations.css">
+  <link rel="stylesheet" href="../styles/mobile-design.css">
+  <link rel="stylesheet" href="../styles/tablet-design.css">
+  </head>
 <body>
   
   
-    <aside>
+    <aside id="bar-icon-visibility">
       
       <div class="aside-first-section">
-        <img src="../images/avatar.jpg" alt="">
+        <div class="avatar-image-remove-icon">
+          <img src="../images/avatar.jpg" alt="">
+        <a class="fa fa-remove remove-icon" href="#bar-icon-disable"></a>
+        </div>
       <h4><strong>PORTFOLIO</strong></h4>
       <p class="text-grey">Template by W3.CSS</p>
       </div>
@@ -66,8 +72,15 @@
         </div>
       </div>
     </aside>
+
     <main>
+      <a class="close-side-menu" title="close the side menu" href="#bar-icon-disable"></a>
       <section class="top-header" id="porfolio-nav">
+        
+        <div class="small-device">
+          <a class="fa fa-bars bar-icon" href="#bar-icon-visibility"></a>
+          <img src="../images/avatar.jpg" alt="">
+        </div>
         <header >
           <h1>My Portfolio</h1>
         </header>
@@ -167,8 +180,12 @@
 
         <div class="picture">
 
-          <img src="../images/personal-image1.jpg" alt="">
-          <img src="../images/personal-image2.jpg" alt="">
+          <div>
+            <img src="../images/personal-image1.jpg" alt="">
+          </div>
+          <div>
+            <img src="../images/personal-image2.jpg" alt="">
+          </div>
         </div>
 
         <h3>About Me</h4>
